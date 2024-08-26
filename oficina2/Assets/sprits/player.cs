@@ -21,7 +21,7 @@ public class player : MonoBehaviour
     void Update()
     {
         Move();
-        jump();
+        Jump();
     }
 
     void Move()
@@ -30,11 +30,42 @@ public class player : MonoBehaviour
         transform.position += movement * Time.deltaTime *Speed;
 
     }
-    void jump()
+    void Jump()
     {
-        if(Input.GetButtonDown("jump"))
+        if(Input.GetButtonDown("Jump")
         {
-            rig.AddForce(new Vector2 (0f,jumpForce),ForceMode2D.Impulse);
+            if( !&&isJumping)
+            {
+                   rig.AddForce(new Vector2 (0f,JumpForce),ForceMode2D.Impulse);
+                   dolbleJump = true;
+            }
+
+             else
+
+            {
+                if(dolbleJump)
+                {
+                     rig.AddForce(new Vector2 (0f,JumpForce ),ForceMode2D.Impulse);
+                     dolbleJump = false;
+                }
+            }
+        }
+    }
+
+        void OncollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer ==8)
+        {
+            isJumping = false;
+        }
+    }
+
+    void OncollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer ==8)
+        {
+            isJumping = true;
+   
         }
     }
 }

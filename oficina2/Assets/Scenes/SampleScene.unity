@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
-  jumpForce: 3
+  jumpForce: 5
 --- !u!1 &2122371603
 GameObject:
   m_ObjectHideFlags: 0
