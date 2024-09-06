@@ -550,12 +550,12 @@ GameObject:
   - component: {fileID: 423440381}
   - component: {fileID: 423440380}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Game Over Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &423440379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -569,6 +569,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1268124650}
+  - {fileID: 1446253525}
   m_Father: {fileID: 1251511089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2611,7 +2612,7 @@ GameObject:
   - component: {fileID: 1211007993}
   - component: {fileID: 1211007992}
   m_Layer: 5
-  m_Name: Image
+  m_Name: image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2628,8 +2629,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1446253525}
+  m_Children: []
   m_Father: {fileID: 1251511089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3210,8 +3210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.388596, y: -0.0000085831}
-  m_SizeDelta: {x: 424.3363, y: 105.8017}
+  m_AnchoredPosition: {x: 30.9411, y: -0.0000085831}
+  m_SizeDelta: {x: 414.1434, y: 105.8017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268124651
 MonoBehaviour:
@@ -3608,17 +3608,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446253524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9417083, y: 0.9417083, z: 0.9417083}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 316146424}
-  m_Father: {fileID: 1211007991}
+  m_Father: {fileID: 423440379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -374.96707, y: -317.6788}
+  m_AnchoredPosition: {x: -20.453552, y: -48.33914}
   m_SizeDelta: {x: 284.2119, y: 91.2994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446253526
@@ -3664,7 +3664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1446253527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738279499}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: lVL_2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1446253527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3935,6 +3947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalScore: 0
   scoreText: {fileID: 1523473492}
+  gameOver: {fileID: 423440378}
 --- !u!4 &1738279500
 Transform:
   m_ObjectHideFlags: 0
@@ -3964,6 +3977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalScore: 0
   scoreText: {fileID: 1523473492}
+  gameOver: {fileID: 423440378}
 --- !u!4 &1953498060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4763815207959107494, guid: 36f2c7090a80faa4da0c27940881777b, type: 3}
