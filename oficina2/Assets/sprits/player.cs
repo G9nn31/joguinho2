@@ -84,6 +84,10 @@ public class player : MonoBehaviour
         {
             isJumping = false;
         }
+        if(collision.gameObject.tag == "spikes")
+        {
+            Debug.Log("tocou o espinho!");
+        }
     }
 
         void OnCollicionExit2D(Collision2D collision)
