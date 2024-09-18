@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class NewBehaviourScript : MonoBehaviour
+public class EfeitosDigitador : MonoBehaviour
 {
     private TextMeshProUGUI componenteTexto;
     private AudioSource _audioSource;
@@ -30,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
     private void OnDisable()
     {
         componenteTexto.text = mensagemOriginal;
-        stopAllCoroutines();
+        StopAllCoroutines();
     }
     public  void ImprimirMensagem(string mensagem)
     {
@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if(imprimindo) return;
             imprimindo = true;
-            StarCoroutine(mensagem);
+            StartCoroutine(LetraPorLetra(mensagem));
         }
     }
     IEnumerator LetraPorLetra( String mensagem)
@@ -52,6 +52,6 @@ public class NewBehaviourScript : MonoBehaviour
             yield return new WaitForSeconds(tempoEntreLetras );
         }
         imprimindo = false;
-        stopAllCoroutines();
+        StopAllCoroutines();
     }
 }
